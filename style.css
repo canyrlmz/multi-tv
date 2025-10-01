@@ -1,0 +1,106 @@
+body {
+    font-family: sans-serif;
+    background-color: #2c2c2c;
+    color: #f1f1f1;
+    margin: 0;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.controls {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#streamUrl {
+    padding: 8px;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+}
+
+#platformSelect {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+#addScreen {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff0000;
+    color: white;
+    cursor: pointer;
+}
+
+.screen-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+}
+
+.screen {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    min-height: 250px;
+    background-color: #000;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.screen iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.remove-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.screen-controls {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    z-index: 10;
+    display: flex;
+    gap: 5px;
+}
+
+.sound-btn, .fullscreen-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 8px;
+    cursor: pointer;
+}
+
+.screen:fullscreen ~ .header {
+    display: none;
+}
